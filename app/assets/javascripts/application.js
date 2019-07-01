@@ -15,13 +15,3 @@
 //= require jquery3
 //= require jquery_ujs
 //= require_tree .
-
-$('#btn').click(function(){
-	  var url = "https://hooks.slack.com/services/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"
-
-  var payload= {"text":"Hey! Hey! Hey! It's GUMMY WORM"}
-
-  $.post(url,JSON.stringify(payload), function(data){
-      $('#result').text(data);
-  })
-})
