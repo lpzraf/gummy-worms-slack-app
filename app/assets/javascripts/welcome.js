@@ -1,5 +1,5 @@
 $('#btn').click(function(){
-	  var url = ""
+	  var url = ENV['SLACK_WEBHOOK']
 
   var payload= {"text":"Hey! Hey! Hey! It's GUMMY WORM"}
 
