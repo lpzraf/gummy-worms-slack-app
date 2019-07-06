@@ -27,7 +27,15 @@ Test
 <script type="text/javascript" charset="utf-8">
 $('#btn-yes').click(function(){
 	 var url = "https://hooks.slack.com/services/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"
-   var payload= {"text":"Gummy worms in the kitchen!"}
+   var payload= {
+    "text": "GUMMY WORMS in the kitchen!",
+    "attachments": [
+        {
+            "title": "It's time for a gummy worm break",
+            "text": "Go and pick up a few."
+        }
+    ]
+}
 
   $.post(url,JSON.stringify(payload), function(data){
       $('#result').text(data);
@@ -36,7 +44,15 @@ $('#btn-yes').click(function(){
 
 $('#btn-no').click(function(){
    var url = "https://hooks.slack.com/services/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"
-   var payload= {"text":"No gummy worms in the kitchen : ("}
+   var payload= {
+    "text": "Bummer, no GUMMY WORMS in the kitchen.",
+    "attachments": [
+        {
+            "title": "You can continue workeeeeng.",
+            "text": ": ("
+        }
+    ]
+}
 
   $.post(url,JSON.stringify(payload), function(data){
       $('#result').text(data);
