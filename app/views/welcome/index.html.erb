@@ -1,20 +1,45 @@
 <br>
 <br>
 <br>
-<h2 id="bebasNeue">Are there Gummy Worms?</h2>
+<br>
+<br>
+<br>
+<div class="title">
+<h2 class="title" id="bebasNeue">Are there Gummy Worms?</h2>
+</div>
 
 
 <div id="result">
-
-
 </div>
-<button id="btn">
-Send Slack message!
-</button>
-<br>
+
+
+<!-- <button id="btn">
+Test
+</button> -->
 <br>
 
 <div class="wrapper">
-  <a href="#" class="fancy-button bg-gradient1"><span><i class="fa fa-wheelchair-alt"></i>Gummys!</span></a>
-  <a href="#" class="fancy-button pop-onhover bg-gradient3"><span>No Gummys!</span></a>
+  <a href="#" class="fancy-button bg-gradient1" id="btn-yes"><span><i class="fa fa-wheelchair-alt"></i>Gummys!</span></a>
+  <a href="#" class="fancy-button pop-onhover bg-gradient3" id="btn-no"><span>No Gummys!</span></a>
 </div><!-- /.wrapper -->
+
+
+<script type="text/javascript" charset="utf-8">
+$('#btn-yes').click(function(){
+	 var url = "https://hooks.slack.com/services/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"
+   var payload= {"text":"Gummy worms in the kitchen!"}
+
+  $.post(url,JSON.stringify(payload), function(data){
+      $('#result').text(data);
+  })
+})
+
+$('#btn-no').click(function(){
+   var url = "https://hooks.slack.com/services/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"
+   var payload= {"text":"No gummy worms in the kitchen : ("}
+
+  $.post(url,JSON.stringify(payload), function(data){
+      $('#result').text(data);
+  })
+})
+</script>
